@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<mapping class="br.com.predialadm.classecon.address.Estado" />
+		<mapping class="br.com.predialadm.classecon.address.Municipio" />
+
+		<mapping class="br.com.predialadm.classecon.condominio.AreaLazer" />
+		<mapping class="br.com.predialadm.classecon.condominio.Condominio" />
+		<mapping class="br.com.predialadm.classecon.condominio.Condomino" />
+		<mapping class="br.com.predialadm.classecon.condominio.Documento" />
+		<mapping class="br.com.predialadm.classecon.condominio.Unidade" />
+		
+	</session-factory>
+</hibernate-configuration>
