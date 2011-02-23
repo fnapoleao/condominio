@@ -1,17 +1,38 @@
 package br.com.predialadm.classecon.address;
 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
 /**
- * Representa um município no sistema.
+ * Representa um municÃ­pio no sistema.
  * @author Idelvane 22/02/2011
  */
-public class Municipio {
 
+@Entity
+public class Municipio implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
 	private String descricao;
+	
 	private String codigoIBGE;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="idEstado")
 	private Estado estado;
 
 	public Municipio() {

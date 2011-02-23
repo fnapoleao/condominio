@@ -1,23 +1,49 @@
 package br.com.predialadm.classecon.condominio;
 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 import br.com.predialadm.classecon.condominio.enums.TipoEntregaEnum;
 import br.com.predialadm.classecon.condominio.enums.TipoEnvioCobrancaEnum;
 
 /**
  * 
- * Classe respons·vel por
+ * Classe respons√°vel por
  * 
  * @author Idelvane 22/02/2011
  * 
  */
-public class Unidade {
 
+@Entity
+public class Unidade implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
+	
+	@Enumerated(EnumType.STRING)
 	private TipoEnvioCobrancaEnum meioEnvio;
+	
+	@Enumerated(EnumType.STRING)
 	private TipoEntregaEnum tipoEntrega;
+	
 	private String fone;
 	private String fax;
+	
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="idUnidadeCobranca")
 	private Unidade veiculacaoCobranca;
 
 	public Long getId() {

@@ -1,31 +1,45 @@
 package br.com.predialadm.classecon.address;
 
+import java.io.Serializable;
+
+import javax.persistence.Embeddable;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
 /**
- * Representa um endere�o no sistema.
+ * Representa um endereço no sistema.
  * @author Idelvane 22/02/2011
  */
 
-public class Endereco {
+@Embeddable
+//TODO Vai ser component ou não
+public class Endereco implements Serializable {
 
-	private Long id;
+	private static final long serialVersionUID = 1L;
+
+	private Long idEndereco;
 	private String numero;
 	private String complemento;
 	private String logradouro;
 	private String cep;
 	private String bairro;
 	private String pontoDeReferencia;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="idMunicipio")
 	private Municipio municipio;
 	
 
-	public Long getId() {
-		return id;
+	public Long getIdEndereco() {
+		return idEndereco;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdEndereco(Long idEndereco) {
+		this.idEndereco = idEndereco;
 	}
 
 	public String getBairro() {

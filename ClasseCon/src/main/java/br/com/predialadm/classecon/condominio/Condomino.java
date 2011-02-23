@@ -3,19 +3,39 @@
  */
 package br.com.predialadm.classecon.condominio;
 
+import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 /**
- * Classe respons·vel por
+ * Classe respons√°vel por
  * 
  * @author Idelvane 22/02/2011
  * 
  */
-public class Condomino {
+@Entity
+public class Condomino implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
+	@Embedded
 	private Pessoa pessoa;
+	
+	@Temporal(TemporalType.DATE)
 	private Date dataInicioContrato;
+	
+	@Temporal(TemporalType.DATE)
 	private Date dataTerminoContrato;
 
 	public Long getId() {
