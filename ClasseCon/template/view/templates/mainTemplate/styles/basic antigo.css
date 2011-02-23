@@ -1,0 +1,608 @@
+/*
+ ==================================
+ ---------- BASIC LAYOUT ----------
+ ==================================
+*/
+body {
+	font: 9pt Verdana, Arial, Helvetica, sans-serif;
+	color: #777777;
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: normal;
+	font-style: italic;
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#top {
+	background: url(../pictures/header-background.jpg);
+}
+
+#top #header {
+	height: 90px;
+	text-indent: -10000px;
+}
+
+#user-info {
+	float: right;
+	margin: 12px 3px 2px;
+}
+
+#sidebar {
+	float: right;
+	width: 13em;
+}
+
+#content {
+	margin-right: 13em;
+	padding: 0;
+}
+
+#title {
+	background: #f9f9f9;
+	height: 35px;
+	line-height: 35px;
+}
+
+#title h1 {
+	font-size: 150%;
+	font-weight: normal;
+	font-style: italic;
+}
+
+#content #title-menu {
+	float: right;
+}
+
+#content #title #title-menu ul {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+#content #title ul li {
+	list-style: none;
+	float: left;
+	padding: 3px 6px;
+}
+
+#content #title span.slash {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18pt;
+	font-weight: bold;
+	color: #b34800;
+}
+
+#footer {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #999;
+	text-align: center;
+	border-top: #ccc 1px dashed;
+	padding: 3px;
+}
+
+#footer a {
+	color: #999;
+	text-decoration: underline;
+}
+
+.spacer {
+	display: block;
+	height: 10px;
+	font-size: 4pt; /*for Internet Explorer*/
+}
+
+a {
+	text-decoration: none;
+	color: #3E72B1;
+	padding: 2px;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: underline;
+	background: #e5effa;
+}
+
+.selected a {
+	font-weight: bold;
+}
+
+.sans-small,.sans-small a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+/*------ TITLES ------*/
+h1,h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #777777; /* @Themeable */
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 2px 0 1px 5px;
+	background: #f7fbf9;
+	width: auto;
+}
+
+h2 {
+	display: inline;
+	font-size: 11pt;
+}
+
+.title-for-print {
+	display: none;
+}
+
+/*------ PANELS ------*/
+.panel {
+	margin: 10px 15px 10px 10px;
+}
+
+* html .panel {
+	margin: 10px;
+}
+
+/*------ SECTION DESCRIPTION ------*/
+.panel DL {
+	margin: 10px;
+}
+
+.panel DL DD {
+	display: inline;
+	margin: 0 0 8px 10px;
+	color: #a39879;
+}
+
+/*------ PRINT RESTRICTIONS ------*/
+.only-for-print {
+	display: none;
+}
+
+/*
+ ==========================================
+ ---------- SIDEBAR & NAVIGATION ----------
+ ==========================================
+*/
+#sidebar ul {
+	padding: 2px 10px 0 10px;
+	margin: 0px;
+}
+
+#sidebar ul li {
+	list-style: none;
+	border-bottom: #ccc 1px dashed;
+	padding: 5px 10px;
+}
+
+#navigation ul {
+	border-bottom: 1px solid #aaa;
+	margin: 0;
+	padding: 10px 15px 5px 5px;
+}
+
+#navigation ul li {
+	list-style: none;
+	display: inline;
+	margin: 0 0 0 3px;
+}
+
+#navigation ul li a {
+	background-color: #f8f8f8;
+	border: 1px solid #aaa;
+	padding: 5px 1em;
+}
+
+#navigation ul li a:hover {
+	padding-top: 8px;
+}
+
+#navigation ul li.selected a {
+	background: #f8f8f8;
+	font-weight: bold;
+	padding-top: 8px;
+	border-bottom: 1px solid #f8f8f8;
+}
+
+/*
+ ===========================
+ ---------- FORMS ----------
+ ===========================
+*/
+INPUT,LABEL,SELECT,TEXTAREA {
+	font-family: Tahoma, sans-serif;
+	font-size: 9pt;
+}
+
+INPUT,SELECT,TEXTAREA {
+	color: #655420;
+	border: 1px solid #999999;
+}
+
+INPUT,TEXTAREA {
+	padding-top: 2px;
+	padding-bottom: 3px;
+	padding-left: 4px;
+}
+
+SELECT {
+	margin-top: 2px;
+}
+
+.select {
+	margin-top: 3px;
+}
+
+LABEL {
+	color: #777777; /* @Themeable */
+}
+
+FORM {
+	margin: 0;
+	padding: 0;
+}
+
+BUTTON {
+	font-family: Arial;
+	font-size: 8pt;
+	color: white;
+	font-weight: bold;
+	margin: 0;
+	padding: 3px 8px;
+	border: 0;
+	background: #3E72B1;
+}
+
+.actionButton {
+	background: #3E72B1;
+}
+
+BUTTON.action {
+	background-color: #b34800;
+}
+
+.otherButton {
+	background-color: #777777; /* @Themeable */
+}
+
+BUTTON.other {
+	background-color: #655420;
+}
+
+* html BUTTON {
+	padding: 3px 0;
+}
+
+FIELDSET {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+LEGEND {
+	font-size: 11pt;
+	font-weight: bold;
+	color: #777777; /* @Themeable */
+	margin: 0 0 5px 0;
+}
+
+button.action {
+	background-color: #b34800;
+}
+
+button.other {
+	background-color: #655420;
+}
+
+/*------ FORM WRAPPER ------*/
+.form-wrapper {
+	padding: 8px;
+	background-color: #f9f9f9;
+	margin: 0px;
+}
+
+.userInput {
+	padding: 9px;
+	padding-bottom: 2px;
+	background-color: #f9f9f9;
+}
+
+.form-wrapper label {
+	display: block;
+	float: left;
+	margin: 0 0 9px 0;
+	text-align: right;
+	width: 120px;
+	padding: 5px 10px 0 0;
+}
+
+.form-wrapper br {
+	clear: left;
+}
+
+.form-wrapper span {
+	display: block;
+	text-align: right;
+}
+
+.listing-wrapper span {
+	display: inline;
+	text-align: left;
+}
+
+.form-wrapper #mask-description {
+	display: inline;
+	text-align: left;
+	font-style: italic;
+	color: rgb(153, 51, 0);
+	padding-left: 5px;
+}
+
+/* --- AUTOCOMPLETE CSS --- */
+.autocomplete {
+	position: absolute;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #4A6C96;
+	font-family: Arial;
+	overflow: auto;
+}
+
+.autocomplete ul {
+	padding: 0;
+	margin: 0;
+}
+
+.autocomplete li {
+	display: block;
+	cursor: pointer;
+	margin: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: 1px solid #fff;
+}
+
+.autocomplete li.selected {
+	background-color: #cef;
+	border-top: 1px solid #9bc;
+	border-bottom: 1px solid #9bc;
+}
+
+#procedimentoscollection .yellowTable {
+	width: 374px; /*today the width of the associated input is 299px*/
+	margin: 0 5px 15px 129px;
+}
+
+* html #procedimentoscollection .yellowTable {
+	width: 363px;
+	margin: 0 5px 15px 132px;
+}
+
+/*
+ ---------- FORMS VALIDATION ----------
+*/
+.invalidField { /*	background: #ffbbbb;*/
+	border: 1px solid #fb5f5f;
+}
+
+.invalidLabel {
+	color: rgb(153, 51, 0);
+}
+
+/*
+ ==============================
+ ---------- MESSAGES ----------
+ ==============================
+*/
+.alert {
+	text-align: justify;
+	min-height: 40px;
+	border-width: 1px;
+	border-style: dashed;
+	margin: 0 15px 10px 10px;
+	padding: 10px 10px 10px 65px;
+}
+
+* html .alert {
+	height: 40px;
+	text-align: left;
+	margin: 0 10px 10px 10px;
+}
+
+.alert span {
+	
+}
+
+.error {
+	color: #930;
+	border-color: #c28567;
+	text-align: left;
+	background: #fcf0f0 url(../pictures/error.png) 5px 8px no-repeat;
+}
+
+.information {
+	color: #06c;
+	border-color: #67a3e0;
+	background: #eff5fd url(../pictures/information.png) 5px 8px no-repeat;
+}
+
+.confirmation {
+	color: #090;
+	border-color: #67c267;
+	text-align: left;
+	background: #eefaee url(../pictures/confirmation.png) 5px 8px no-repeat;
+}
+
+.warning {
+	color: #9A7300;
+	border-color: #c5af6a;
+	background: #fefde7 url(../pictures/warning.png) 5px 8px no-repeat;
+}
+
+/*
+ ==========================
+ ---------- STEPS ---------
+ ==========================
+*/
+.step {
+	float: left;
+	margin-right: 10px;
+}
+
+.step .number {
+	float: left;
+	background-color: #d6d6d6;
+	color: white;
+	font-weight: bold;
+	padding: 4px 7px;
+}
+
+.step .description {
+	display: block;
+	background-color: #eeeeee;
+	color: #d6d6d6;
+	margin-left: 23px;
+	padding: 4px 7px;
+}
+
+.selected .number {
+	background-color: #656565;
+}
+
+.selected .description {
+	background-color: #d6d6d6;
+	color: #656565;
+	font-weight: bold;
+}
+
+/*
+ ============================
+ ---------- TABLES ----------
+ ============================
+*/
+fieldset table.yellowTable {
+	clear: both;
+}
+
+table.yellowTable {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	border: 1px solid #c9c9c9; /* @Themeable [border-color]*/
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.yellowTable table {
+	border: 1px solid #c9c9c9;
+}
+
+.yellowTable .nomeDasPropriedades {
+	color: #777777; /* @Themeable */
+	text-align: right;
+	width: 127px;
+}
+
+.yellowTable table,.yellowTable th,.yellowTable a {
+	margin: 0px;
+	padding: 2px;
+}
+
+.yellowTable td {
+	padding: 3px 4px 3px 4px;
+	text-align: center;
+	vertical-align: middle;
+	color: #655420;
+}
+
+.yellowTable .valuesColumn {
+	text-align: justify;
+}
+
+.yellowTable .options {
+	width: 12em;
+}
+
+.yellowTable th {
+	text-align: center;
+	padding-left: 4px;
+	background-color: #c9c9c9; /* @Themeable */
+	color: #777777;
+}
+
+.yellowTable th.sorted {
+	background-color: #d6d6d6;
+}
+
+.yellowTable th.sortable a {
+	color: #777777; /* @Themeable */
+	text-decoration: underline;
+}
+
+.yellowTable tr.odd {
+	background-color: #fff;
+}
+
+.yellowTable tr.tableRowEven,tr.even {
+	background-color: #eeeeee;
+}
+
+.yellowTable tr.separator td {
+	background-color: #d6d6d6;
+	color: #777777;
+	padding-left: 10px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.yellowTable .yellowTable {
+	border: none;
+}
+
+.yellowTable .yellowTable th {
+	background-color: #d6d6d6;
+}
+
+.moreOptions {
+	display: none;
+}
+
+.listing-status {
+	height: 8pt;
+	color: #655420;
+}
+
+.listing-status a {
+	color: #655420;
+}
+
+.listing-status #number {
+	float: left;
+	margin: 2px 5px 2px;
+	clear: none;
+}
+
+.listing-status #paging {
+	float: right;
+	margin: 2px 5px 2px;
+}

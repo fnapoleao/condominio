@@ -1,0 +1,15 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 0.4//EN"
+    "http://www.getahead.ltd.uk/dwr/dwr.dtd">
+
+<!-- JHEAT: DWR CONFIGURATION FILE -->
+
+<dwr>
+
+  <allow>
+  		<create creator="new" javascript="AjaxLoader" scope="request">
+  			<param name="class" value="br.com.infowaypi.jheat.webcontent.ajax.AjaxLoader"/>
+  		</create>
+  </allow>
+  
+</dwr>
