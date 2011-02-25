@@ -206,7 +206,7 @@
 							<outputDirectory>target/jheat-web</outputDirectory>
 							<resources>
 								<resource>
-									<directory>templates/template</directory>
+									<directory>template</directory>
 								</resource>
 							</resources>
 						</configuration>
