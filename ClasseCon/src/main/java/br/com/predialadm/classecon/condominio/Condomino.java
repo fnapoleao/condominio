@@ -5,12 +5,16 @@ package br.com.predialadm.classecon.condominio;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -37,6 +41,10 @@ public class Condomino implements Serializable {
 	
 	@Temporal(TemporalType.DATE)
 	private Date dataTerminoContrato;
+	
+	@OneToMany(fetch=FetchType.LAZY)
+	@JoinColumn(name="idCondominio")
+	private Set<ContratoServico> contratosServico;
 
 	public Long getId() {
 		return id;
@@ -68,6 +76,14 @@ public class Condomino implements Serializable {
 
 	public void setDataTerminoContrato(Date dataTerminoContrato) {
 		this.dataTerminoContrato = dataTerminoContrato;
+	}
+	
+	public Set<ContratoServico> getContratosServico() {
+		return contratosServico;
+	}
+	
+	public void setContratosServico(Set<ContratoServico> contratosServico) {
+		this.contratosServico = contratosServico;
 	}
 
 }

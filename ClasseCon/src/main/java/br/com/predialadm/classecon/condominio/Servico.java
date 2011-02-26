@@ -1,6 +1,3 @@
-/**
- * 
- */
 package br.com.predialadm.classecon.condominio;
 
 import java.io.Serializable;
@@ -13,29 +10,23 @@ import javax.persistence.Id;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-/**
- * Classe responsável por
- * 
- * @author Idelvane 22/02/2011
- * 
- */
-
 @Entity
-public class AreaLazer implements Serializable {
+public class Servico implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long idServico;
+	
 	private String descricao;
 
-	public Long getId() {
-		return id;
+	public Long getIdServico() {
+		return idServico;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdServico(Long idServico) {
+		this.idServico = idServico;
 	}
 
 	public String getDescricao() {
@@ -45,13 +36,14 @@ public class AreaLazer implements Serializable {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
 	@Override
 	public boolean equals(Object object) {
-		if (!(object instanceof AreaLazer)) {
+		if (!(object instanceof Servico)) {
 			return false;
 		}
 		
-		AreaLazer otherObject = (AreaLazer) object;
+		Servico otherObject = (Servico) object;
 		return new EqualsBuilder()
 			.append(this.getDescricao(), otherObject.getDescricao())
 			.isEquals();
