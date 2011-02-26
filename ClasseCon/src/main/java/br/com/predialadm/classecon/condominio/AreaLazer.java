@@ -10,11 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
 /**
- * Classe responsável por
+ * Classe que representa as áreas de lazer dos condomínios.
  * 
  * @author Idelvane 22/02/2011
  * 
@@ -44,24 +41,6 @@ public class AreaLazer implements Serializable {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-	@Override
-	public boolean equals(Object object) {
-		if (!(object instanceof AreaLazer)) {
-			return false;
-		}
-		
-		AreaLazer otherObject = (AreaLazer) object;
-		return new EqualsBuilder()
-			.append(this.getDescricao(), otherObject.getDescricao())
-			.isEquals();
-	}
-	
-	@Override
-	public int hashCode() {
-		return new HashCodeBuilder()
-			.append(this.getDescricao())
-			.toHashCode();
 	}
 
 }

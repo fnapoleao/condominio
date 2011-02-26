@@ -19,7 +19,8 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 /**
- * Classe responsável por
+ * Classe que representa os documentos publicáveis que são carregados para o
+ * sistema.
  * 
  * @author Idelvane 22/02/2011
  * 
@@ -28,24 +29,30 @@ import javax.persistence.Transient;
 public class Documento implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String descricao;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataEnvio;
-	
-//	@ManyToOne(fetch=FetchType.LAZY)
-//	@JoinColumn(name="idUsuario")
-//	TODO Depois que mapear a classe usuário, descomentar o mapeamento acima
-	@Transient
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
-	
+
 	@Lob
 	private byte[] conteudo;
+	
 	private String versao;
+
+	/**
+	 * Condomínio ao qual o documento pertence.
+	 */
+	@ManyToOne (fetch = FetchType.LAZY)
+	@JoinColumn (name = "idCondominio")
+	private Condominio condominio;
 
 	public Long getId() {
 		return id;
@@ -93,6 +100,14 @@ public class Documento implements Serializable {
 
 	public void setVersao(String versao) {
 		this.versao = versao;
+	}
+
+	public Condominio getCondominio() {
+		return condominio;
+	}
+
+	public void setCondominio(Condominio condominio) {
+		this.condominio = condominio;
 	}
 
 }

@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,12 +15,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- * Classe responsável por
+ * Classe que representa um Condômino no sistema ClasseCon.
  * 
  * @author Idelvane 22/02/2011
  * 
@@ -33,18 +35,47 @@ public class Condomino implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	/**
+	 * Um condomíno pode estar vinculado a uma pessoa fisica ou pessoa juridica,
+	 * depende do tipo de pessoa escolhido na hora do cadastrado.
+	 */
 	@Embedded
 	private Pessoa pessoa;
-	
+
+	/**
+	 * Data de início do contrato com o condomínio.
+	 */
 	@Temporal(TemporalType.DATE)
+	@Column(nullable = false)
 	private Date dataInicioContrato;
-	
+
+	/**
+	 * Data término do contrato com o condomínio.
+	 */
 	@Temporal(TemporalType.DATE)
 	private Date dataTerminoContrato;
-	
-	@OneToMany(fetch=FetchType.LAZY)
-	@JoinColumn(name="idCondominio")
-	private Set<ContratoServico> contratosServico;
+
+	/**
+	 * Um condomino pode estar vinculado a várias unidades com o passar do tempo
+	 * ou ao mesmo tempo.
+	 */
+	@ManyToMany (mappedBy ="condominos")
+	//TODO verificar se está certo
+	private Set<Unidade> unidades;
+
+	/**
+	 * Usuário vinculado ao condomino.
+	 */
+	@OneToOne (fetch = FetchType.LAZY)
+	private UsuarioCondomino usuario;
+
+	/**
+	 * Tipo do condomino: inquilino, inquilino/proprietário, proprietário ou
+	 * imobiliária
+	 */
+	@OneToOne 
+	@JoinColumn (name = "idTipoCondomino")
+	private TipoCondomino tipoCondomino;
 
 	public Long getId() {
 		return id;
@@ -77,13 +108,29 @@ public class Condomino implements Serializable {
 	public void setDataTerminoContrato(Date dataTerminoContrato) {
 		this.dataTerminoContrato = dataTerminoContrato;
 	}
-	
-	public Set<ContratoServico> getContratosServico() {
-		return contratosServico;
+
+	public Set<Unidade> getUnidades() {
+		return unidades;
 	}
-	
-	public void setContratosServico(Set<ContratoServico> contratosServico) {
-		this.contratosServico = contratosServico;
+
+	public void setUnidades(Set<Unidade> unidades) {
+		this.unidades = unidades;
+	}
+
+	public UsuarioCondomino getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UsuarioCondomino usuario) {
+		this.usuario = usuario;
+	}
+
+	public TipoCondomino getTipoCondomino() {
+		return tipoCondomino;
+	}
+
+	public void setTipoCondomino(TipoCondomino tipoCondomino) {
+		this.tipoCondomino = tipoCondomino;
 	}
 
 }
