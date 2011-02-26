@@ -83,6 +83,10 @@ public class Condominio implements Serializable {
 	 */
 	@OneToMany (fetch = FetchType.LAZY)
 	private Set<AreaLazer> areasDeLazer;
+	
+	@OneToMany(fetch=FetchType.LAZY)
+	@JoinColumn(name="idCondominio")
+	private Set<ContratoServico> contratosServico;
 
 	public Long getId() {
 		return id;
@@ -171,5 +175,14 @@ public class Condominio implements Serializable {
 	public void setAreasDeLazer(Set<AreaLazer> areasDeLazer) {
 		this.areasDeLazer = areasDeLazer;
 	}
+	
+	public Set<ContratoServico> getContratosServico() {
+		return contratosServico;
+	}
+	
+	public void setContratosServico(Set<ContratoServico> contratosServico) {
+		this.contratosServico = contratosServico;
+	}
+
 
 }
