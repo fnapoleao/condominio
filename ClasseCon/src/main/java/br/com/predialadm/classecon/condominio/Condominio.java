@@ -4,7 +4,6 @@
 package br.com.predialadm.classecon.condominio;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Embedded;
@@ -16,8 +15,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+
+import br.com.predialadm.classecon.condominio.historico.Historico;
 
 /**
  * Classe que representa um condomínio, entidade principal do sistema.
@@ -34,7 +36,7 @@ public class Condominio implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String nome;
+
 	private String sigla;
 	
 	/**
@@ -42,13 +44,10 @@ public class Condominio implements Serializable {
 	 */
 	@Embedded
 	private Pessoa pessoaRelacionada;
-
-	@Temporal(TemporalType.DATE)
-	private Date dataContrato;
-
-	@Temporal(TemporalType.DATE)
-	private Date dataVencimentoContrato;
-
+	
+	@Embedded
+	private DadosContrato dadosContratuais;
+	
 	/**
 	 * Unidades do condomínio.
 	 */
@@ -87,21 +86,20 @@ public class Condominio implements Serializable {
 	@OneToMany(fetch=FetchType.LAZY)
 	@JoinColumn(name="idCondominio")
 	private Set<ContratoServico> contratosServico;
-
+	
+	@OneToOne (fetch = FetchType.LAZY)
+	@JoinColumn (name = "idHistorico")
+	private Historico historico;
+	
+	@OneToMany (fetch = FetchType.LAZY, mappedBy = "condominio")
+	private Set<Regimento> regimentos;
+	
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public String getSigla() {
@@ -120,20 +118,12 @@ public class Condominio implements Serializable {
 		this.pessoaRelacionada = pessoaRelacionada;
 	}
 
-	public Date getDataContrato() {
-		return dataContrato;
+	public DadosContrato getDadosContratuais() {
+		return dadosContratuais;
 	}
 
-	public void setDataContrato(Date dataContrato) {
-		this.dataContrato = dataContrato;
-	}
-
-	public Date getDataVencimentoContrato() {
-		return dataVencimentoContrato;
-	}
-
-	public void setDataVencimentoContrato(Date dataVencimentoContrato) {
-		this.dataVencimentoContrato = dataVencimentoContrato;
+	public void setDadosContratuais(DadosContrato dadosContratuais) {
+		this.dadosContratuais = dadosContratuais;
 	}
 
 	public Set<Unidade> getUnidades() {
@@ -183,6 +173,43 @@ public class Condominio implements Serializable {
 	public void setContratosServico(Set<ContratoServico> contratosServico) {
 		this.contratosServico = contratosServico;
 	}
+	
+	public Set<Regimento> getRegimentos() {
+		return regimentos;
+	}
 
+	public void setRegimentos(Set<Regimento> regimentos) {
+		this.regimentos = regimentos;
+	}
 
+	public Historico getHistorico() {
+		return historico;
+	}
+
+	public void setHistorico(Historico historico) {
+		this.historico = historico;
+	}
+		
+	@Override
+	public boolean equals(Object object) {
+		if (!(object instanceof Condominio)) {
+			return false;
+		}
+		
+		Condominio otherObject = (Condominio) object;
+		return new EqualsBuilder()
+			.append(this.getPessoaRelacionada(), otherObject.getPessoaRelacionada())
+			.append(this.getDadosContratuais(), otherObject.getDadosContratuais())
+			.append(this.getSigla(), otherObject.getSigla())
+			.isEquals();
+	}
+	
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder()
+		.append(this.getPessoaRelacionada())
+		.append(this.getDadosContratuais())
+		.append(this.getSigla())
+		.toHashCode();
+	}
 }

@@ -8,28 +8,33 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 
 import br.com.predialadm.classecon.condominio.enums.StatusEnum;
+
 /**
  * 
- * Classe que respresenta um usuário do sistema. Esse usuário que poderá fazer login e acessar o sistema.
+ * Classe que respresenta um usuário do sistema. Esse usuário que poderá fazer
+ * login e acessar o sistema.
+ * 
  * @author Idelvane 25/02/2011
- *
+ * 
  */
 @Entity
-@Inheritance (strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn (name = "tipoUsuario", discriminatorType = DiscriminatorType.STRING, length = 3)
-@DiscriminatorValue ("USU")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipoUsuario", discriminatorType = DiscriminatorType.STRING, length = 3)
+@DiscriminatorValue("USU")
 public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	/**
 	 * Dados cadastrais de um usuário
@@ -39,11 +44,17 @@ public class Usuario implements Serializable {
 	private String email;
 	private String cpf;
 	private String celular;
+	
+	@Enumerated (EnumType.STRING)
+	private RoleEnum role;
 	/**
 	 * Define o status do usuário: ativo, cancelado, suspenso.
 	 */
-	@Enumerated (EnumType.ORDINAL)
+	@Enumerated(EnumType.ORDINAL)
 	private StatusEnum status;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Empresa empresa;
 
 	public Long getId() {
 		return id;
@@ -99,6 +110,22 @@ public class Usuario implements Serializable {
 
 	public void setStatus(StatusEnum status) {
 		this.status = status;
+	}
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
+
+	public RoleEnum getRole() {
+		return role;
+	}
+
+	public void setRole(RoleEnum role) {
+		this.role = role;
 	}
 
 }

@@ -42,7 +42,7 @@ public class ContratoServico implements Serializable {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="idFornecedor", nullable=false)
 	private Fornecedor fornecedor;
-
+	
 	public Long getIdContrato() {
 		return idContrato;
 	}

@@ -1,0 +1,29 @@
+#top {background: url(../pictures/header-background-green.jpg)}
+
+#banner {background: #addead}
+
+BODY, H1,
+LABEL, LEGEND,
+.yellowTable .nomeDasPropriedades, .yellowTable td span,
+.yellowTable th, .yellowTable tr.separator td,
+.yellowTable th.sortable a {color: #266c41}
+.otherButton {background-color: #266c41}
+
+table.yellowTable {border-color: #b8e3b8}
+.yellowTable th {background-color: #b8e3b8}
+
+.yellowTable tr div {border: 1px solid #b8e3b8;}
+
+.yellowTable tr.separator td,
+.yellowTable th.sorted,
+.yellowTable .yellowTable th,
+.selected .description {background-color: #ccebcc}
+
+.yellowTable tr.tableRowEven, tr.even,
+.step .description {background-color: #ebf7eb}
+
+.step .description {color: #c9dacf}
+.step .number {background-color: #c9dacf}
+
+.selected .description {color: #00461b}
+.selected .number {background-color: #00461b}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+	"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+    "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+     
+<!-- JHEAT: TILES CONFIGURATION FILE -->
+                                   
+<tiles-definitions>
+
+	<!-- MAIN TEMPLATE TO BE USED BY ALL MAPPINGS -->
+
+    <definition name=".mainTemplate" path="/view/templates/mainTemplate/MainTemplate.jsp">
+        <put name="pageTitle" value="home"/>
+        <put name="header" value="/view/templates/mainTemplate/Header.jsp"/>                
+        <put name="tabs" value="/view/jsp/menus/MainTabs.jsp"/>
+        <put name="mainMenu" value="/view/jsp/menus/MainMenu.jsp"/>
+        <put name="body" value="/view/jsp/Home.jsp"/>
+        <put name="footer" value="/view/templates/mainTemplate/Footer.jsp"/>
+    </definition>
+
+	<!-- PAGES MAPPING -->
+
+    <definition name=".Home" extends=".mainTemplate">
+	    <put name="body" value="/view/jsp/Home.jsp"/>
+    </definition>
+
+    <definition name=".Confirm" extends=".mainTemplate">
+	    <put name="body" value="/view/jsp/forms/ConfirmForm.jsp"/>
+    </definition>	
+    	
+	TILES_DEFINITIONS
+	
+	<!-- ERROR PAGES MAPPING -->
+	
+	<definition name=".403Error" extends=".mainTemplate">
+        <put name="body" value="/view/jsp/403Error.jsp"/>
+    </definition>
+
+    <definition name=".404Error" extends=".mainTemplate">
+        <put name="body" value="/view/jsp/404Error.jsp"/>
+    </definition>
+
+    <definition name=".500Error" extends=".mainTemplate">
+        <put name="body" value="/view/jsp/500Error.jsp"/>
+    </definition>
+
+    <definition name=".changeCalendar" path="/view/jsp/calendar/Calendar.jsp"/>
+</tiles-definitions>

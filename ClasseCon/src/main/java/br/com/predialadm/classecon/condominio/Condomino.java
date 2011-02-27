@@ -10,6 +10,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -69,13 +71,9 @@ public class Condomino implements Serializable {
 	@OneToOne (fetch = FetchType.LAZY)
 	private UsuarioCondomino usuario;
 
-	/**
-	 * Tipo do condomino: inquilino, inquilino/proprietário, proprietário ou
-	 * imobiliária
-	 */
-	@OneToOne 
-	@JoinColumn (name = "idTipoCondomino")
-	private TipoCondomino tipoCondomino;
+	
+	@Enumerated(EnumType.STRING)
+	private TipoCondominoEnum tipoCondomino;
 
 	public Long getId() {
 		return id;
@@ -125,11 +123,11 @@ public class Condomino implements Serializable {
 		this.usuario = usuario;
 	}
 
-	public TipoCondomino getTipoCondomino() {
+	public TipoCondominoEnum getTipoCondomino() {
 		return tipoCondomino;
 	}
 
-	public void setTipoCondomino(TipoCondomino tipoCondomino) {
+	public void setTipoCondomino(TipoCondominoEnum tipoCondomino) {
 		this.tipoCondomino = tipoCondomino;
 	}
 

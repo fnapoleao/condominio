@@ -12,7 +12,15 @@
 		<mapping class="br.com.predialadm.classecon.condominio.AreaLazer" />
 		<mapping class="br.com.predialadm.classecon.condominio.Condominio" />
 		<mapping class="br.com.predialadm.classecon.condominio.Condomino" />
+		<mapping class="br.com.predialadm.classecon.condominio.ContratoServico" />
 		<mapping class="br.com.predialadm.classecon.condominio.Documento" />
+		<mapping class="br.com.predialadm.classecon.condominio.Empresa" />
+		<mapping class="br.com.predialadm.classecon.condominio.Fornecedor" />
+		<mapping class="br.com.predialadm.classecon.condominio.Funcionario" />
+		<mapping class="br.com.predialadm.classecon.condominio.PessoaFisica" />
+		<mapping class="br.com.predialadm.classecon.condominio.PessoaJuridica" />
+		<mapping class="br.com.predialadm.classecon.condominio.Regimento" />
+		<mapping class="br.com.predialadm.classecon.condominio.Servico" />
 		<mapping class="br.com.predialadm.classecon.condominio.Unidade" />
 		
 	</session-factory>

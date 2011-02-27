@@ -4,17 +4,24 @@
 package br.com.predialadm.classecon.condominio;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
 /**
- * Classe responsável por	
+ * Classe que representa itens do regimento a serem inseridos no sistema. A coleção de regimentos será chamada de "Sumário de Informações".
+ * 	
  * @author Idelvane 22/02/2011
  *
  */
@@ -27,7 +34,15 @@ public class Regimento implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idRegimento;
+
 	private String descricao;
+	
+	@Temporal (TemporalType.DATE)
+	private Date dataInclusao;
+	
+	@ManyToOne (fetch = FetchType.LAZY)
+	@JoinColumn (name = "idCondominio")
+	private Condominio condominio;
 	
 	public Long getIdRegimento() {
 		return idRegimento;
@@ -45,6 +60,22 @@ public class Regimento implements Serializable {
 		this.descricao = descricao;
 	}
 	
+	public Date getDataInclusao() {
+		return dataInclusao;
+	}
+
+	public void setDataInclusao(Date dataInclusao) {
+		this.dataInclusao = dataInclusao;
+	}
+	
+	public Condominio getCondominio() {
+		return condominio;
+	}
+
+	public void setCondominio(Condominio condominio) {
+		this.condominio = condominio;
+	}
+
 	@Override
 	public boolean equals(Object object) {
 		if (!(object instanceof Regimento)) {
@@ -54,6 +85,8 @@ public class Regimento implements Serializable {
 		Regimento otherObject = (Regimento) object;
 		return new EqualsBuilder()
 			.append(this.getDescricao(), otherObject.getDescricao())
+			.append(this.getDataInclusao(), otherObject.getDataInclusao())
+			.append(this.getCondominio(), otherObject.getCondominio())
 			.isEquals();
 	}
 	
@@ -61,6 +94,8 @@ public class Regimento implements Serializable {
 	public int hashCode() {
 		return new HashCodeBuilder()
 			.append(this.getDescricao())
+			.append(this.getDataInclusao())
+			.append(this.getCondominio())
 			.toHashCode();
 	}
 
