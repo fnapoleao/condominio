@@ -12,7 +12,7 @@ import javax.persistence.Id;
 
 /**
  * Classe que representa um banco no sistema ClasseCon. Estará vinculado a uma
- * informaçaõ financeira de um condomínio.
+ * informação financeira de um condomínio.
  * 
  * @author Idelvane 25/02/2011
  * 

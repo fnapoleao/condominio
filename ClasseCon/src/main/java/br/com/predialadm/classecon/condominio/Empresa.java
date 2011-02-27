@@ -21,6 +21,9 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
 /**
+ * 
+ * @author Rondinele
+ * 25/02/2011
  * Classe que representa uma empresa que utiliza o sistema ClasseCon.
  * 
  * @author Rondinele/ Idelvane

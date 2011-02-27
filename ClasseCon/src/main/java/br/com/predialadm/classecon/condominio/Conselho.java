@@ -1,6 +1,3 @@
-/**
- * 
- */
 package br.com.predialadm.classecon.condominio;
 
 import java.io.Serializable;
@@ -14,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -33,18 +32,21 @@ public class Conselho implements Serializable {
 	@Id
 	@GeneratedValue( strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@Column (name = "idSindico")
-	//TODO
+
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn (name = "idSindico")
 	private Condomino sindico;
-	@Column (name ="idSubSindico")
-	//TODO como mapear isso?
+	
+	@ManyToOne (fetch=FetchType.LAZY)
+	@JoinColumn(name="idSubSindico")
 	private Condomino subSindico;
 
 	/**
 	 * Conselheiros do conselho;
 	 */
-	//TODO como mapear?
+	@ManyToMany
+	@JoinTable(name="Condomino_Conselho",joinColumns=@JoinColumn(columnDefinition="idConselheiro"),
+			inverseJoinColumns=@JoinColumn(columnDefinition="idConselho"))
 	private Set<Condomino> conselheiros;
 
 	/**

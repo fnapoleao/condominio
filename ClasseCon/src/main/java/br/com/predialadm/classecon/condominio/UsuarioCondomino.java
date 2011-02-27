@@ -8,6 +8,7 @@ import java.util.Set;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 /**
  * Classe que representa um usuário vinculado a um condomino
@@ -19,16 +20,13 @@ import javax.persistence.ManyToOne;
 @DiscriminatorValue ("UCO")
 public class UsuarioCondomino extends Usuario {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Um condomino pode ter várias unidades, sendo que caso ele deixe de ter
 	 * uma, basta retirá-la da coleção.
 	 */
-	//TODO como mapear via hibernate?
+	@Transient
 	private Set<Unidade> unidades;
 	/*
 	 * condomino vinculado ao usuário.

@@ -9,6 +9,11 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import br.com.predialadm.classecon.address.Endereco;
 
+/**
+ * 
+ * @author Rondinele
+ * 25/02/2011
+ */
 @Embeddable
 public class Contato implements Serializable{
 

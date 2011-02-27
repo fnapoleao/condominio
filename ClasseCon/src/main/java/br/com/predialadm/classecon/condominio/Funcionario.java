@@ -15,6 +15,11 @@ import javax.persistence.ManyToOne;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+/**
+ * 
+ * @author Rondinele
+ * 25/02/2011
+ */
 @Entity
 public class Funcionario implements Serializable {
 	

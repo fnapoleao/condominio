@@ -21,6 +21,11 @@ import br.com.predialadm.classecon.condominio.enums.GrauInstrucaoEnum;
 import br.com.predialadm.classecon.condominio.enums.SexoEnum;
 import br.com.predialadm.classecon.condominio.enums.TipoRG;
 
+/**
+ * 
+ * @author Rondinele
+ * 25/02/2011
+ */
 @Entity
 public class PessoaFisica implements Serializable {
 

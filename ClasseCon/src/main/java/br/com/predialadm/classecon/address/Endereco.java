@@ -16,7 +16,6 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  */
 
 @Embeddable
-//TODO Vai ser component ou não
 public class Endereco implements Serializable {
 
 	private static final long serialVersionUID = 1L;
