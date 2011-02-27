@@ -47,9 +47,9 @@ fieldset {
 	clear: both;
 }
 fieldset legend {
-	background: #fff url("../pictures/fieldset.png") repeat-x top left;
+/*	background: #fff url("../pictures/fieldset.png") repeat-x top left;
 	border: 1px solid #fff;
-	border-bottom: none;
+	border-bottom: none; */
 	color: #3E92B8;
 	font-size: 125%;
 	font-weight: normal;
@@ -62,7 +62,7 @@ fieldset legend {
 	height: 50px;
 	line-height: 50px;
 	text-indent: 15px;
-	border-radius-top-left: 5px;
+/*	border-radius-top-left: 5px;
 	border-radius-top-right: 5px;
 	-moz-border-radius-topLeft: 5px;
 	-moz-border-radius-topRight: 5px;
@@ -70,7 +70,7 @@ fieldset legend {
 	-webkit-border-radius-top-right: 5px;
 	box-shadow: #DAEDF3 0 -2px 3px;
 	-moz-box-shadow: #DAEDF3 0 -2px 3px;
-	-webkit-box-shadow: #DAEDF3 0 -2px 3px;
+	-webkit-box-shadow: #DAEDF3 0 -2px 3px; */
 }
 .spacer {
 	display: block;
@@ -475,6 +475,7 @@ div.alert.warning span {
 	-webkit-border-radius: 5px;
 }
 .form-wrapper label {
+	color: #666;
 	display:block;
 	float:left;
 	margin:0 0 10px;
@@ -496,19 +497,18 @@ div.alert.warning span {
 }
 
 .form-wrapper span {
-	background: #EBEBEB url(../pictures/jheat-shadow.png) repeat-x left top ;
+/*	background: #EBEBEB url(../pictures/jheat-shadow.png) repeat-x left top; */
 	margin-top: 10px;
 	padding: 0px 10px;
 	display:block;
 	text-align:right;
-	border-top: 1px solid #E5E5E5;
+/*	border-top: 1px solid #E5E5E5; 
 	border-radius-bottom-right: 5px;
 	-moz-border-radius-bottomRight: 5px;
 	-webkit-border-radius-bottom-right: 5px;
 	border-radius-bottom-left: 5px;
 	-moz-border-radius-bottomLeft: 5px;
-	-webkit-border-radius-bottom-left: 5px;
-
+	-webkit-border-radius-bottom-left: 5px; */
 }
 .form-wrapper button {
 	margin: 10px 0;
@@ -517,6 +517,9 @@ div.alert.warning span {
 	background-color: #79AFCC;
 	margin: 0px;
 }
+/****************************
+*	BUTTONS					*
+*****************************/
 button {
 	border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -529,6 +532,9 @@ button {
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 	cursor: pointer;
 }
+.listing-wrapper button {
+	background-color: #76B800;
+}
 .form-wrapper br {
 	clear: both;
 }
@@ -536,9 +542,13 @@ button {
 *	TABLE					*
 *****************************/
 table.yellowTable {
+	background-color: #fff;
 	width: 100%;
 	border-spacing: 1px;
+	border: 1px solid #A1C8D7;
+	color: #666;
 }
+
 
 /*****	Referente aos Dados Pessoais *****/
 .yellowTable .nomeDasPropriedades {
@@ -555,9 +565,11 @@ table td.nomeDasPropriedades {
 	color:#FFF;
 	padding:3px 5px;
 	text-align:center;
-	font-size: 9px;
+	font-size: 11px;
 	height: 30px;
 	vertical-align: middle;
+	text-transform: uppercase;
+	text-shadow: 0px -1px #125479;
 }
 .yellowTable td {
 	text-align: left !important;
@@ -606,3 +618,64 @@ table#item {
 	color: #A1C8D7;
 }
 
+/************************************/
+/*	AUTOCOMPLETE					*/
+/************************************/
+
+.autocomplete {
+	padding: 1px;
+	color: #000000;
+	overflow: auto;
+	position: absolute;
+	background: #f6f6f6;
+	border: 1px solid #6593cf;
+	font: 11px Tahoma, sans-serif;
+}
+.autocomplete ul { 
+	margin: 0;
+	padding: 0;
+}
+.autocomplete li {
+	margin: 0;
+	color: #000000;
+	display: block;
+	cursor: pointer;
+	padding: 3px 5px;
+	list-style: none;
+	border: 1px solid #ffffff;
+}
+.autocomplete li.selected {
+	background: #ffe7a2;
+	border: 1px solid #ffbd69;
+}
+
+/************************************/
+/*	AUTOCOMPLETE					*/
+/************************************/
+
+.autocomplete {
+	padding: 1px;
+	color: #000000;
+	overflow: auto;
+	position: absolute;
+	background: #f6f6f6;
+	border: 1px solid #6593cf;
+	font: 11px Tahoma, sans-serif;
+}
+.autocomplete ul { 
+	margin: 0;
+	padding: 0;
+}
+.autocomplete li {
+	margin: 0;
+	color: #000000;
+	display: block;
+	cursor: pointer;
+	padding: 3px 5px;
+	list-style: none;
+	border: 1px solid #ffffff;
+}
+.autocomplete li.selected {
+	background: #ffe7a2;
+	border: 1px solid #ffbd69;
+}

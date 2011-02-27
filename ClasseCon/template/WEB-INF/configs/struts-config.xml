@@ -166,6 +166,6 @@
 		<set-property property="pathnames" value="/WEB-INF/validator-rules.xml, /WEB-INF/configs/validation.xml"/>
 	</plug-in>
 
-    <plug-in className="com.octo.captcha.module.struts.CaptchaServicePlugin"/>
+<!--    <plug-in className="com.octo.captcha.module.struts.CaptchaServicePlugin"/>-->
     
 </struts-config>

@@ -1,13 +1,18 @@
 <?xml version="1.0"?>
-
 <!DOCTYPE jheat-mapping PUBLIC 
 	"-//JHeat/JHeat DTD 1.0//BR" 
 	"http://www.infoway-pi.com.br/jheat.dtd">
 
 <jheat-configuration application-title="ClasseCon"
 	application-description="ClasseCon"
-	application-context="target/jheat-web" debug="true">
+	application-context="target/classecon" debug="true">
 	
+	<include mapping-file="br/com/predialadm/classecon/address/Municipio.jhm.xml"/>
+	<include mapping-file="br/com/predialadm/classecon/address/Estado.jhm.xml"/>
+	
+	<sections>
+		<section display-name="Cadastro" name="cadastro" />
+	</sections>
 	
 </jheat-configuration>
 
