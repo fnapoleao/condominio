@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE jheat-mapping PUBLIC 
+	"-//JHeat/JHeat DTD 1.0//BR" 
+	"http://www.infoway-pi.com.br/jheat.dtd">
+
+<jheat-mapping>
+	<class-mapping name="AreaLazer" display-name="Área de lazer" class="br.com.predialadm.classecon.condominio.AreaLazer" 
+		id-name="id" section="cadastro" type="readonly"" link-for-detail="descricao">
+		
+		<description></description>
+		
+		<property name="descricao" not-null="true">
+			<display options="listing,search" name="Nome" size="20"/>
+		</property>
+
+	</class-mapping>
+</jheat-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE jheat-mapping PUBLIC 
+	"-//JHeat/JHeat DTD 1.0//BR" 
+	"http://www.infoway-pi.com.br/jheat.dtd">
+
+<jheat-mapping>
+	<class-mapping name="Estado" display-name="Estado" class="br.com.predialadm.classecon.address.Estado" 
+		id-name="id" section="cadastro" type="simple" link-for-detail="descricao">
+		
+		<description></description>
+		
+		<property name="descricao" not-null="true">
+			<display options="listing,search" name="Nome" size="20"/>
+		</property>
+		
+		<property name="uf" not-null="true">
+			<display options="listing,search" name="UF" size="5"/>
+		</property>
+		
+		<collection name="municipios" display-name="Municípios" class="br.com.predialadm.classecon.address.Municipio" 
+			options="insert,delete" />
+		
+		
+	</class-mapping>
+</jheat-mapping>

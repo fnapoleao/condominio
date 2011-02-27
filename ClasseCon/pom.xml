@@ -176,6 +176,18 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>3.5.0-Final</version>
 		</dependency>
+		
+<!--		 <dependency> <groupId>org.eclipse.persistence</groupId> -->
+<!--			<artifactId>javax.persistence</artifactId>-->
+<!--			 <version>2.0.0</version> -->
+<!--		 </dependency>-->
+		
+		<dependency> 
+			<groupId>javassist</groupId> 
+			<artifactId>javassist</artifactId> 
+			<version>3.9.0.GA</version> 
+		</dependency>
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -203,7 +215,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>target/jheat-web</outputDirectory>
+							<outputDirectory>target/classecon</outputDirectory>
 							<resources>
 								<resource>
 									<directory>template</directory>
@@ -211,6 +223,23 @@
 							</resources>
 						</configuration>
 					</execution>
+
+					<execution>
+						<id>copy-jar</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/classecon/WEB-INF/lib</outputDirectory>
+							<resources>
+								<resource>
+									<directory>lib</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+
 				</executions>
 			</plugin>
 			<plugin>
@@ -223,8 +252,8 @@
 						<configuration>
 							<tasks>
 								<echo>Configuração inicial para a geração do projeto</echo>
-								<delete dir="target/jheat-web" />
-								<mkdir dir="target/jheat-web" />
+								<delete dir="target/classecon" />
+								<mkdir dir="target/classecon" />
 								<echo>Aplicação gerada com sucesso!</echo>
 							</tasks>
 						</configuration>
@@ -261,7 +290,7 @@
 					<execution>
 						<phase>package</phase>
 						<configuration>
-							<webappDirectory>${basedir}/target/jheat-web/</webappDirectory>
+							<webappDirectory>${basedir}/target/classecon/</webappDirectory>
 						</configuration>
 						<goals>
 							<goal>war</goal>

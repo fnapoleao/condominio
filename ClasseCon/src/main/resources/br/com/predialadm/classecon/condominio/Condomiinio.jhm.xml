@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE jheat-mapping PUBLIC 
+	"-//JHeat/JHeat DTD 1.0//BR" 
+	"http://www.infoway-pi.com.br/jheat.dtd">
+
+<jheat-mapping>
+	<class-mapping name="Condominio" display-name="Condomínio" class="br.com.predialadm.classecon.condominio.Condominio" 
+		id-name="id" section="cadastro" type="simple" link-for-detail="pessoa.pessoaJuridica.fantasia">
+		
+		<description></description>
+		
+		<property name="pessoa.pessoaJuridica.fantasia" not-null="true">
+			<display options="listing,search" name="Nome" size="20"/>
+		</property>
+
+		<property name="pessoa.pessoaJuridica.razaoSocial" not-null="false">
+			<display options="none" name="Razão Social" size="20"/>
+		</property>
+
+		<property name="pessoa.pessoaJuridica.cnpj" not-null="true">
+			<display options="listing,search" name="CNPJ" size="20"/>
+		</property>
+
+		<property name="sigla" not-null="false">
+			<display options="listing" name="Sigla" size="20"/>
+		</property>
+
+		<property name="dataContrato" not-null="true" type="date" search-type="greaterequals">
+			<display options="listing,search" name="Data do contrato" size="20"/>
+		</property>
+
+		<property name="dataVencimentoContrato" not-null="true" type="date" search-type="greaterequals">
+			<display options="listing,search" name="Data de vencimento do contrato" size="20"/>
+		</property>
+		
+		<many-to-many name="areasDeLazer" display-name="Áreas de lazer" class="br.com.predialadm.classecon.condominio.AreaLazer">
+			<autocomplete minimum-characters="3" style-class="auocomplete">
+				<search-property display-name="Área de lazer" name="descricao"/>
+				<name-property display-name="Área de lazer" name="descricao"/>
+			</autocomplete>
+		</many-to-many>
+		
+		<collection name="contratosServico" display-name="Contratos de serviço" class="br.com.predialadm.classecon.condominio.ContratoServico" 
+			master-detail="true"/>
+		
+		<collection name="conselhos" display-name="Conselho" class="br.com.predialadm.classecon.condominio.Conselho" 
+			master-detail="false" options="insert" />
+		
+
+	</class-mapping>
+</jheat-mapping>
