@@ -43,7 +43,7 @@ public class Noticia implements Serializable {
 	@Lob
 	private String corpo;
 
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	private TipoNoticiaEnum tipoNoticia;
 
 	/**

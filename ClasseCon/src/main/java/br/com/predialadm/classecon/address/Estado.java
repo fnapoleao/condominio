@@ -29,7 +29,6 @@ public class Estado implements Serializable {
 	private String descricao;
 	
 	private String uf;
-	
 	@OneToMany(mappedBy="estado")
 	private Set<Municipio> municipios;
 	

@@ -14,8 +14,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import br.com.predialadm.classecon.condominio.enums.RoleEnum;
 import br.com.predialadm.classecon.condominio.enums.StatusEnum;
 
 /**
@@ -54,6 +56,7 @@ public class Usuario implements Serializable {
 	private StatusEnum status;
 
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn (name = "idEmpresa")
 	private Empresa empresa;
 
 	public Long getId() {

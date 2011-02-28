@@ -2,7 +2,6 @@ package br.com.predialadm.classecon.condominio;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,11 +13,12 @@ import javax.persistence.ManyToOne;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
-
 /**
  * 
- * @author Rondinele
- * 25/02/2011
+ * Classe que representa os funcionários de um condomínio.
+ *  	
+ * @author Idelvane 27/02/2011
+ *
  */
 @Entity
 public class Funcionario implements Serializable {
@@ -76,6 +76,7 @@ public class Funcionario implements Serializable {
 	@Override
 	public int hashCode() {
 		return new HashCodeBuilder()
+			.append(this.getPessoa())
 			.append(this.getCondominio())
 			.toHashCode();
 	}

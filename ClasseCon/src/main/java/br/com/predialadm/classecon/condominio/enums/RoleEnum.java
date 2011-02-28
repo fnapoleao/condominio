@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.predialadm.classecon.condominio;
+package br.com.predialadm.classecon.condominio.enums;
 
 /**
  * Classe que representa um role (papel) no sistema.

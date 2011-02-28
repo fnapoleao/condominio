@@ -16,11 +16,11 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  */
 
 @Embeddable
+//TODO Vai ser component ou não
 public class Endereco implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Long idEndereco;
 	private String numero;
 	private String complemento;
 	private String logradouro;
@@ -32,15 +32,6 @@ public class Endereco implements Serializable {
 	@JoinColumn(name="idMunicipio")
 	private Municipio municipio;
 	
-
-	public Long getIdEndereco() {
-		return idEndereco;
-	}
-
-	public void setIdEndereco(Long idEndereco) {
-		this.idEndereco = idEndereco;
-	}
-
 	public String getBairro() {
 		return this.bairro;
 	}
@@ -105,7 +96,6 @@ public class Endereco implements Serializable {
 		}
 		Endereco otherObject = (Endereco) object;
 		return new EqualsBuilder()
-			.append(this.idEndereco, otherObject.getIdEndereco())
 			.append(this.cep, otherObject.getCep())
 			.append(this.bairro, otherObject.getBairro())
 			.append(this.logradouro, otherObject.getLogradouro())
@@ -118,7 +108,6 @@ public class Endereco implements Serializable {
 	@Override
 	public int hashCode() {
 		return new HashCodeBuilder()
-			.append(this.idEndereco)
 			.append(this.cep)
 			.append(this.bairro)
 			.append(this.logradouro)

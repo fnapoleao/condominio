@@ -10,11 +10,11 @@
 	<include mapping-file="br/com/predialadm/classecon/address/Municipio.jhm.xml"/>
 	<include mapping-file="br/com/predialadm/classecon/address/Estado.jhm.xml"/>
 	
+	<include mapping-file="br/com/predialadm/classecon/condominio/Noticia.jhm.xml"/>
+	
 	<sections>
 		<section display-name="Cadastro" name="cadastro" />
+		<section display-name="Relacionamento" name="relacionamento" />
 	</sections>
 	
 </jheat-configuration>
-
-
-

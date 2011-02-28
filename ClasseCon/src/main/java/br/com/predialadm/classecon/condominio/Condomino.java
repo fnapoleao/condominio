@@ -16,11 +16,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import br.com.predialadm.classecon.condominio.enums.TipoCondominoEnum;
+
 
 /**
  * Classe que representa um Condômino no sistema ClasseCon.

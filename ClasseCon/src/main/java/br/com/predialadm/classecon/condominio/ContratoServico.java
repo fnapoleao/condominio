@@ -3,7 +3,6 @@ package br.com.predialadm.classecon.condominio;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,11 +16,6 @@ import javax.persistence.TemporalType;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-/**
- * 
- * @author Rondinele
- * 25/02/2011
- */
 @Entity
 public class ContratoServico implements Serializable {
 

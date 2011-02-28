@@ -15,19 +15,27 @@
 		<mapping class="br.com.predialadm.classecon.condominio.Condomino" />
 		<mapping class="br.com.predialadm.classecon.condominio.Conselho" />
 		<mapping class="br.com.predialadm.classecon.condominio.Consumo" />
+		
 		<mapping class="br.com.predialadm.classecon.condominio.ContratoServico" />
+		
 		<mapping class="br.com.predialadm.classecon.condominio.Documento" />
 		<mapping class="br.com.predialadm.classecon.condominio.Empresa" />
 		<mapping class="br.com.predialadm.classecon.condominio.EmpresaContabilidade" />
+		
+		<mapping class="br.com.predialadm.classecon.condominio.Filial" />
 		<mapping class="br.com.predialadm.classecon.condominio.Fornecedor" />
 		<mapping class="br.com.predialadm.classecon.condominio.Funcionario" />
+		<mapping class="br.com.predialadm.classecon.condominio.historico.Historico" />
+		<mapping class="br.com.predialadm.classecon.condominio.historico.ItemHistorico" />
 		<mapping class="br.com.predialadm.classecon.condominio.InformacaoFinanceira" />
+		
+		<mapping class="br.com.predialadm.classecon.condominio.Noticia" />
 		<mapping class="br.com.predialadm.classecon.condominio.Ocorrencia" />
+		
 		<mapping class="br.com.predialadm.classecon.condominio.PessoaFisica" />
 		<mapping class="br.com.predialadm.classecon.condominio.PessoaJuridica" />
 		<mapping class="br.com.predialadm.classecon.condominio.Regimento" />
 		<mapping class="br.com.predialadm.classecon.condominio.Servico" />
-		<mapping class="br.com.predialadm.classecon.condominio.TipoCondomino" />
 		<mapping class="br.com.predialadm.classecon.condominio.TipoConsumo" />
 		<mapping class="br.com.predialadm.classecon.condominio.Unidade" />
 		<mapping class="br.com.predialadm.classecon.condominio.Usuario" />

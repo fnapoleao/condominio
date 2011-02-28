@@ -9,16 +9,17 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
-
 /**
  * 
- * @author Rondinele
- * 25/02/2011
+ * Classe que representa um fornecedor do sistema ClasseCon. Um fornecedor pode ser cadastrado em cada filial
+ * que presta serviço e poderá ser avaliado pelo sindico. 	
+ * @author Rondinele/ Idelvane
+ *  27/02/2011
+ *
  */
 @Entity
 public class Fornecedor implements Serializable {

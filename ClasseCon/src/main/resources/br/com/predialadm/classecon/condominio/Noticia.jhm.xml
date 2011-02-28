@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE jheat-mapping PUBLIC 
+	"-//JHeat/JHeat DTD 1.0//BR" 
+	"http://www.infoway-pi.com.br/jheat.dtd">
+	
+<jheat-mapping>
+	
+	<class-mapping class="br.com.predialadm.classecon.condominio.Noticia" name="Noticia" display-name="Notícias" 
+		id-name="id" link-for-detail="titulo" type="simple" section="relacionamento">
+		
+		<description>Notícias Cadastradas no Sistema</description>
+
+	    <property name="dataInclusao" type="date" not-null="true">
+			<display name="Dta. Inclusão" options="listing,detail-only" maxlength="10" size="20"/>
+	    </property>  
+	
+		<enum-property name="tipoNoticia" display-name="Tipo de Notícia" class="br.com.predialadm.classecon.condominio.enums.TipoNoticiaEnum" 
+			options="listing" display="getDescricao" input-type="combo"/>
+		
+		<property name="titulo" type="string" not-null="true">
+			<display name="Título" options="listing,search"/>
+	    </property>
+	    	
+	    <property-editor name="corpo" required="true" display-name="Corpo" />	
+	    
+	    <enum-property name="destino" display-name="Destinatário(s)" class="br.com.predialadm.classecon.condominio.enums.RoleEnum" options=""
+	    	display="getRole" value="getRole"/>
+			
+		<property name="somenteNaPaginaInicial" type="boolean" not-null="false">
+			<display name="Só na P. Principal" options=""/>
+	    </property>
+			
+		<property name="ativa" type="boolean" not-null="false">
+			<display name="Ativa" options=""/>
+	    </property>
+
+		<property name="usuario.nome" type="string" not-null="true">
+			<display name="Usuário" options="detail-only"/>
+	    </property>
+	   	
+	</class-mapping>
+
+</jheat-mapping>

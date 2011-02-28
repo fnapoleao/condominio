@@ -3,6 +3,7 @@
  */
 package br.com.predialadm.classecon.condominio;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -21,7 +22,12 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  * 
  */
 @Embeddable
-public class DadosContrato {
+public class DadosContrato implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Column(precision = 19, scale = 2)
 	private BigDecimal valorContrato;
